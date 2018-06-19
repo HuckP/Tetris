@@ -1,18 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+
+const Tetris = require("react-tetris");
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1 className="App-header">TETRIS</h1>
+        <Tetris>
+          {({ HeldPiece, Gameboard, PieceQueue, points, linesCleared }) => {
+            // Render it however you'd like
+            return (
+              <div>
+                <div className="left-box">
+                  <HeldPiece />
+                </div>
+                <div className="right-box">
+                  <PieceQueue />
+                </div>
+                <div>
+                  <div className="none-box">
+                    <Gameboard />
+                    <p>Points: {points}</p>
+                    <p>Lines Cleared: {linesCleared}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          }}
+        </Tetris>
       </div>
     );
   }
