@@ -20,6 +20,7 @@ class App extends Component {
                   <PieceQueue />
                 </div>
                 <div>
+                  <div>awefawef</div>
                   <div className="none-box">
                     <Gameboard />
                     <p>Points: {points}</p>
